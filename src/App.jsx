@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './App.css'
-
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default function App() {
   const [books, setBooks] = useState([
@@ -83,7 +84,7 @@ function BookList({books,setBooks}) {
               <td>{book.genre}</td>
               <td>
                 <Link to={`/edit/${book.id}`}>Edit</Link>
-                <button onClick={() => handleDelete(book.id)}>Delete</button>
+                <Button onClick={() => handleDelete(book.id)}>Delete</Button>
               </td>
             </tr>
           ))}
@@ -139,22 +140,22 @@ function BookForm({books,setBooks}) {
           <Form>
             <div>
               <label htmlFor="title">Title:</label>
-              <Field type="text" name="title" />
+              <TextField type="text" name="title" />
               <ErrorMessage name="title" component="div" />
             </div>
             <div>
               <label htmlFor="author">Author:</label>
-              <Field type="text" name="author" />
+              <TextField type="text" name="author" />
               <ErrorMessage name="author" component="div" />
             </div>
             <div>
               <label htmlFor="genre">Genre:</label>
-              <Field type="text" name="genre" />
+              <TextField type="text" name="genre" />
               <ErrorMessage name="genre" component="div" />
             </div>
-            <button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting}>
               Add
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>
@@ -211,22 +212,22 @@ function BookForms({books,book,setBooks}) {
           <Form>
             <div>
               <label htmlFor="title">Title:</label>
-              <Field type="text" name="title" />
+              <TextField type="text" name="title" />
               <ErrorMessage name="title" component="div" />
             </div>
             <div>
               <label htmlFor="author">Author:</label>
-              <Field type="text" name="author" />
+              <TextField type="text" name="author" />
               <ErrorMessage name="author" component="div" />
             </div>
             <div>
               <label htmlFor="genre">Genre:</label>
-              <Field type="text" name="genre" />
+              <TextField type="text" name="genre" />
               <ErrorMessage name="genre" component="div" />
             </div>
-            <button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting}>
               Update
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>
@@ -248,7 +249,7 @@ function BookDetails({ books }) {
       <h1>{book.title}</h1>
       <div>Author: {book.author}</div>
       <div>Genre: {book.genre}</div>
-      <button onClick={() => (`/edit/${book.id}`)}>Edit</button>
+      <Button onClick={() => (`/edit/${book.id}`)}>Edit</Button>
     </div>
   );
 }

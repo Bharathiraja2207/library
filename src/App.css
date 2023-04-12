@@ -2,3 +2,7 @@
   background-color: rgb(126, 175, 248);
   display: flex;
 }
+
+.header h1{
+  margin-left: 25%;
+}
