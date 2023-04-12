@@ -69,7 +69,7 @@ function BookList({books,setBooks}) {
       <Link to="/add">Add Book</Link>
       <table>
         <thead>
-          <tr>
+          <tr className='table'>
             <th>Title</th>
             <th>Author</th>
             <th>Genre</th>

@@ -6,3 +6,10 @@
 .header h1{
   margin-left: 25%;
 }
+.table th{
+  
+  padding: 40px
+}
+table{
+  text-align: center;
+}
